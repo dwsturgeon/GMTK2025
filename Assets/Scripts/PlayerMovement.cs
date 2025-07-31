@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     [SerializeField] private SpriteRenderer sr;
 
+    private Animator playerAnimator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,5 +41,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+    }
+
+    public void splice(InputAction.CallbackContext context)
+    {
+        if (playerAnimator.GetBool("isSplicingDNA"))
+        {
+            playerAnimator.SetBool("isSplicingDNA", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("isSplicingDNA", true);
+        }
+            
     }
 }
