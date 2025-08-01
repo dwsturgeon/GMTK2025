@@ -27,7 +27,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "89399d1b-008e-4cf9-b921-870dcd649cc9",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -36,6 +36,15 @@
                     "name": "SpliceDNA",
                     "type": "Button",
                     "id": "a285231b-da50-40bd-afac-882ac6c9bbd8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "e76ba3cf-dba8-4809-90bb-0cc777acd5f1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -271,6 +280,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SpliceDNA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b67b804a-8434-44cb-bbbe-e1ac7cbcb1f9",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
