@@ -3,13 +3,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    bool canCutDNA = false;
+    //vars
+    Animator playerAnimator;
+    PlayerMovement playerMovement;
+    //default movespeed
+    float playerMoveSpeed;
 
     void Start()
     {
-        
+        playerAnimator = GetComponent<Animator>();
+    }
+
+    private void Awake()
+    {
+        playerMovement = GetComponent<PlayerMovement>();
+        playerMoveSpeed = playerMovement.GetMoveSpeed();
     }
 
     // Update is called once per frame
@@ -25,16 +33,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("DNA"))
-        {
-            canCutDNA = true;
-        }
+      
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("DNA"))
+        playerMovement.resetMoveSpeed();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DNA") && (playerAnimator.GetBool("isSplicingDNA") == true))
         {
-            canCutDNA = false;
+            float newMoveSpeed = playerMoveSpeed / 2;
+            playerMovement.SetMoveSpeed(playerMoveSpeed);
         }
     }
 }

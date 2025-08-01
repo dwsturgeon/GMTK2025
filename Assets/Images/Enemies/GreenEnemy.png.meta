@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: efaf7d8294124fe40a1f767947036e30
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8910654801672170397
+    second: GreenEnemy_0
+  - first:
+      213: 5518350965065450659
+    second: GreenEnemy_1
+  - first:
+      213: 8363119206682635922
+    second: GreenEnemy_2
+  - first:
+      213: 4342298831751536611
+    second: GreenEnemy_3
+  - first:
+      213: -5120796411039535853
+    second: GreenEnemy_4
+  - first:
+      213: 8813476621061405739
+    second: GreenEnemy_5
+  - first:
+      213: -4051872430930727586
+    second: GreenEnemy_6
+  - first:
+      213: -2989581786299495974
+    second: GreenEnemy_7
+  - first:
+      213: 6607120223011214465
+    second: GreenEnemy_8
+  - first:
+      213: -7921506424271094395
+    second: GreenEnemy_9
+  - first:
+      213: -3435352434174971106
+    second: GreenEnemy_10
+  - first:
+      213: -9200223086398875100
+    second: GreenEnemy_11
+  - first:
+      213: 225161879171923637
+    second: GreenEnemy_12
+  - first:
+      213: 347413780680212397
+    second: GreenEnemy_13
+  - first:
+      213: 103529708160082525
+    second: GreenEnemy_14
+  - first:
+      213: 6304337533794534277
+    second: GreenEnemy_15
+  - first:
+      213: 3047686593421173024
+    second: GreenEnemy_16
+  - first:
+      213: 5695177763644123364
+    second: GreenEnemy_17
+  - first:
+      213: 2982577982620401857
+    second: GreenEnemy_18
+  - first:
+      213: -6780653090952077892
+    second: GreenEnemy_19
+  - first:
+      213: 5916046491645069116
+    second: GreenEnemy_20
+  - first:
+      213: 1056997424629616444
+    second: GreenEnemy_21
+  - first:
+      213: 6353991111146842344
+    second: GreenEnemy_22
+  - first:
+      213: -4540715937848689468
+    second: GreenEnemy_23
+  - first:
+      213: 7478293475580576395
+    second: GreenEnemy_24
+  - first:
+      213: -3981598396780502055
+    second: GreenEnemy_25
+  - first:
+      213: -3053532674802204863
+    second: GreenEnemy_26
+  - first:
+      213: 4926477450258672373
+    second: GreenEnemy_27
+  - first:
+      213: 8997405012641193540
+    second: GreenEnemy_28
+  - first:
+      213: 3653335162600804265
+    second: GreenEnemy_29
+  - first:
+      213: -3934133975395553562
+    second: GreenEnemy_30
+  - first:
+      213: -9152357633391235227
+    second: GreenEnemy_31
+  - first:
+      213: -2460112101897712969
+    second: GreenEnemy_32
+  - first:
+      213: -7343749807164000477
+    second: GreenEnemy_33
+  - first:
+      213: -805037089158200768
+    second: GreenEnemy_34
+  - first:
+      213: 4704729650728347968
+    second: GreenEnemy_35
+  - first:
+      213: -2896737602366327796
+    second: GreenEnemy_36
+  - first:
+      213: 878188906139558692
+    second: GreenEnemy_37
+  - first:
+      213: 6107886101180169034
+    second: GreenEnemy_38
+  - first:
+      213: -4405723617738470568
+    second: GreenEnemy_39
+  - first:
+      213: -7603761865317468109
+    second: GreenEnemy_40
+  - first:
+      213: 2250477394133705260
+    second: GreenEnemy_41
+  - first:
+      213: -1917965541140830402
+    second: GreenEnemy_42
+  - first:
+      213: -964993521184993902
+    second: GreenEnemy_43
+  - first:
+      213: 2091260164539195809
+    second: GreenEnemy_44
+  - first:
+      213: 7516874970012537293
+    second: GreenEnemy_45
+  - first:
+      213: 2605896112052458279
+    second: GreenEnemy_46
+  - first:
+      213: 7130278839528040683
+    second: GreenEnemy_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GreenEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9b6cc9d45109ab70800000000000000
+      internalID: 8910654801672170397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a409aa17fe159c40800000000000000
+      internalID: 5518350965065450659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ea098db94cf0470800000000000000
+      internalID: 8363119206682635922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_3
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 250
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3efd42fe7c1f24c30800000000000000
+      internalID: 4342298831751536611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31da4e89bc64fe8b0800000000000000
+      internalID: -5120796411039535853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c33928a42cf4a70800000000000000
+      internalID: 8813476621061405739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dec27ed7bd4c7c0800000000000000
+      internalID: -4051872430930727586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreenEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad904a0743fd286d0800000000000000
+      internalID: -2989581786299495974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8423a3abcfe847a448b93d29741bc7b2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":250.0,"y":250.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GreenEnemy_0: 8910654801672170397
+      GreenEnemy_1: 5518350965065450659
+      GreenEnemy_2: 8363119206682635922
+      GreenEnemy_3: 4342298831751536611
+      GreenEnemy_4: -5120796411039535853
+      GreenEnemy_5: 8813476621061405739
+      GreenEnemy_6: -4051872430930727586
+      GreenEnemy_7: -2989581786299495974
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
