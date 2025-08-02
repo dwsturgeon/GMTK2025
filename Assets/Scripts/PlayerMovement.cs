@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.LightTransport;
 
 public class PlayerMovement : MonoBehaviour
@@ -79,15 +81,22 @@ public class PlayerMovement : MonoBehaviour
     //on left click
     public void Fire(InputAction.CallbackContext context)
     {
-        //Vector2 cursorPosition = context.ReadValue<Vector2>();
-        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        Vector2 playerPosition = transform.position;
 
+       
+            //Vector2 cursorPosition = context.ReadValue<Vector2>();
+            Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 playerPosition = transform.position;
+            Vector2 moveDirection;
 
-        bulletInstance = Instantiate(bullet, playerPosition, transform.rotation);
+            moveDirection = worldPosition.normalized;
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            Quaternion qangle = Quaternion.Euler(0, 0, angle);
 
+            bulletInstance = Instantiate(bullet, playerPosition, qangle);
+            bulletInstance.GetComponent<BulletController>().SetMoveDirection(moveDirection);
 
-        //Debug.Log("fire");
+            //Debug.Log("fire");
+        
     }
 
 

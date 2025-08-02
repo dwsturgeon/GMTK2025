@@ -307,9 +307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   sr: {fileID: 4899265084334384525}
-  bullet: {fileID: 0}
+  bullet: {fileID: 234859684628760606, guid: cde88131534770a428d84674efa32720, type: 3}
   dashSpeed: 1.5
-  dashTime: 0.5
+  dashTime: 0.4
   dashCooldown: 1
 --- !u!70 &7448689804216659970
 CapsuleCollider2D:
