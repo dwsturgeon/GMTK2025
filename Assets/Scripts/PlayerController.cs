@@ -7,16 +7,37 @@ public class PlayerController : MonoBehaviour
     PlayerMovement playerMovement;
     //default movespeed
     float playerMoveSpeed;
+    Canvas playerCanvas;
+    HealthManager playerHealthManager;
+    SpriteRenderer playerRenderer;
+
+
+    [SerializeField] AudioSource shoot;
+    [SerializeField] AudioSource splice;
+    [SerializeField] AudioSource dash;
+
+
+    [SerializeField] GameObject DNA;
 
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerMoveSpeed = playerMovement.GetMoveSpeed();
+        playerHealthManager = GetComponent<HealthManager>();
+        playerRenderer = GetComponent<SpriteRenderer>();
+
+
+        playerCanvas = GetComponentInChildren<Canvas>();
+        playerCanvas.enabled = false;
+
+        
+
     }
 
     private void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
-        playerMoveSpeed = playerMovement.GetMoveSpeed();
+        
     }
 
     // Update is called once per frame
@@ -27,7 +48,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if(playerHealthManager.GetHealth() <= 0)
+        {
+            playerRenderer.enabled = false;
+            playerCanvas.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,5 +71,26 @@ public class PlayerController : MonoBehaviour
         {
             playerMovement.SetMoveSpeed(playerMoveSpeed / 2);
         }
+    }
+
+    public void SpliceDNA()
+    {
+        DNA.GetComponent<DNAFunctions>().RemoveCorruption();
+    }
+
+
+    public void PlayShootAudio()
+    {
+        shoot.Play();
+    }
+
+    public void PlaySpliceAudio()
+    {
+        splice.Play();
+    }
+
+    public void PlayDashAudio()
+    {
+        dash.Play();
     }
 }

@@ -14,16 +14,23 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     HealthManager healthManager;
 
+   
+
+    [SerializeField] AudioSource Attack1;
+
+    [SerializeField] AudioSource Death1;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         healthManager = GetComponent<HealthManager>();
+        player = GameObject.Find("Player");
+        DNA = GameObject.Find("DNA");
     }
 
     private void Awake()
     {
-        player = GameObject.Find("Player");
-        DNA = GameObject.Find("DNA");
+        
         
     }
 
@@ -45,6 +52,14 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            player.GetComponent<HealthManager>().RemoveHealth(10);
+        }
+    }
+
 
     private void MoveTowardsTarget()
     {
@@ -56,15 +71,16 @@ public class EnemyController : MonoBehaviour
         float xPositionBefore = transform.position.x;
         float xPositionAfter;
 
-        if (playerDistance < DNADistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        /*if (playerDistance < DNADistance)
+        {*/
+        
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             
-        }
+        /*}
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, DNA.transform.position, moveSpeed * Time.deltaTime);
-        }
+        }*/
 
         xPositionAfter = transform.position.x;
 
@@ -76,5 +92,15 @@ public class EnemyController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
+    }
+
+    public void playDeath()
+    {
+        Death1.Play();
+    }
+
+    public void playAttack()
+    {
+        Attack1.Play();
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
-using UnityEngine.LightTransport;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,8 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private GameObject bulletInstance;
 
     private Animator playerAnimator;
-
-  
 
 
     //dashing
@@ -85,24 +82,16 @@ public class PlayerMovement : MonoBehaviour
     public void Fire(InputAction.CallbackContext context)
     {
 
-      
+        if (!playerAnimator.GetBool("isDashing") &&
+            !playerAnimator.GetBool("isSplicing"))
+        {
+            if (!playerAnimator.GetBool("isFiring"))
+            {
+                playerAnimator.SetBool("isFiring", true);
+            }
 
-
-        bulletInstance = Instantiate(bullet, transform.position, Quaternion.identity);
-
-        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        mouseWorldPosition.z = 0; // Ensure Z-axis is consistent for 2D
-
-        Vector3 direction = mouseWorldPosition - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bulletInstance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
-        
-        //bulletInstance.GetComponent<BulletController>().SetDirection(Direction);
-
-        //Debug.Log("fire");
-        
+            //Debug.Log("fire");
+        }
     }
 
 
@@ -110,9 +99,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
-        if (!playerAnimator.GetBool("isSplicingDNA"))
+        if (!playerAnimator.GetBool("isDashing") &&
+           !playerAnimator.GetBool("isFiring"))
         {
-            StartCoroutine(DashRoutine());
+            if (!playerAnimator.GetBool("isSplicingDNA"))
+            {
+                StartCoroutine(DashRoutine());
+            }
         }
     }
     IEnumerator DashRoutine()
@@ -121,7 +114,9 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
 
         moveSpeed = moveSpeed * dashSpeed;
+        GetComponent<CapsuleCollider2D>().enabled = false;
         playerAnimator.SetBool("isDashing", true);
+        
 
         yield return new WaitForSeconds(dashTime);
 
@@ -131,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     public void FaceCursor()
@@ -160,5 +156,30 @@ public class PlayerMovement : MonoBehaviour
     public void ResetMoveSpeed()
     {
         moveSpeed = defaultMoveSpeed;
+    }
+
+    public void FireProjectile()
+    {
+        bulletInstance = Instantiate(bullet, transform.position, Quaternion.identity);
+
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0; // Ensure Z-axis is consistent for 2D
+
+        Vector3 direction = mouseWorldPosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bulletInstance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+    public void StopFiring()
+    {
+        playerAnimator.SetBool("isFiring", false);
+    }
+
+
+    public void StopAllAnimations()
+    {
+        playerAnimator.SetBool("isFiring", false);
+        playerAnimator.SetBool("isDashing", false);
+        playerAnimator.SetBool("isSplicing", false);
     }
 }
