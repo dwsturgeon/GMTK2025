@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - DNA
+  - Enemy
   layers:
   - Default
   - TransparentFX
