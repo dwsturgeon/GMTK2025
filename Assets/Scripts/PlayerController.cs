@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -35,17 +34,17 @@ public class PlayerController : MonoBehaviour
     {
       
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerMovement.resetMoveSpeed();
+        playerMovement.ResetMoveSpeed();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("DNA") && (playerAnimator.GetBool("isSplicingDNA") == true))
         {
-            float newMoveSpeed = playerMoveSpeed / 2;
-            playerMovement.SetMoveSpeed(playerMoveSpeed);
+            playerMovement.SetMoveSpeed(playerMoveSpeed / 2);
         }
     }
 }

@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,29 +11,38 @@ public class EnemyController : MonoBehaviour
 
     GameObject player;
     GameObject DNA;
+    Animator animator;
+    HealthManager healthManager;
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        healthManager = GetComponent<HealthManager>();
     }
 
     private void Awake()
     {
         player = GameObject.Find("Player");
         DNA = GameObject.Find("DNA");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveTowardsTarget();
-        
+        if (!animator.GetBool("isDying"))
+        {
+            MoveTowardsTarget();
+        }
     }
 
 
     private void FixedUpdate()
     {
-        
+        if (healthManager.GetHealth() <= 0)
+        {
+            animator.SetBool("isDying", true);
+        }
     }
 
 
@@ -42,8 +50,8 @@ public class EnemyController : MonoBehaviour
     {
 
         
-        float playerDistance = Vector2.Distance(this.transform.position, player.transform.position);
-        float DNADistance = Vector2.Distance(this.transform.position, DNA.transform.position);
+        float playerDistance = Vector2.Distance(transform.position, player.transform.position);
+        float DNADistance = Vector2.Distance(transform.position, DNA.transform.position);
 
         float xPositionBefore = transform.position.x;
         float xPositionAfter;

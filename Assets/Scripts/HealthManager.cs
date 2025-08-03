@@ -18,13 +18,23 @@ public class HealthManager : MonoBehaviour
 
     //getters & setters
 
-    public float getHealth()
+    public float GetHealth()
     {
         return health;
     }
 
-    public void setHealth(float newHealth)
+    public void SetHealth(float newHealth)
     {
         health = newHealth;
+    }
+
+    public void AddHealth(float healthToAdd)
+    {
+        health += healthToAdd;
+    }
+
+    public void RemoveHealth(float healthToRemove)
+    {
+        health -= healthToRemove;
     }
 }

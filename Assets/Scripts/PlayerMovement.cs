@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator playerAnimator;
 
+  
+
 
     //dashing
     public float dashSpeed = 20f;
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-
+    
         defaultMoveSpeed = moveSpeed;
     }
 
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;
+        //FaceCursor();
     }
 
     public void move(InputAction.CallbackContext context)
@@ -82,20 +85,23 @@ public class PlayerMovement : MonoBehaviour
     public void Fire(InputAction.CallbackContext context)
     {
 
-       
-            //Vector2 cursorPosition = context.ReadValue<Vector2>();
-            Vector2 worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Vector2 playerPosition = transform.position;
-            Vector2 moveDirection;
+      
 
-            moveDirection = worldPosition.normalized;
-            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            Quaternion qangle = Quaternion.Euler(0, 0, angle);
 
-            bulletInstance = Instantiate(bullet, playerPosition, qangle);
-            bulletInstance.GetComponent<BulletController>().SetMoveDirection(moveDirection);
+        bulletInstance = Instantiate(bullet, transform.position, Quaternion.identity);
 
-            //Debug.Log("fire");
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0; // Ensure Z-axis is consistent for 2D
+
+        Vector3 direction = mouseWorldPosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bulletInstance.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        
+        //bulletInstance.GetComponent<BulletController>().SetDirection(Direction);
+
+        //Debug.Log("fire");
         
     }
 
@@ -121,10 +127,21 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = false;
         playerAnimator.SetBool("isDashing", false);
-        resetMoveSpeed();
+        ResetMoveSpeed();
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void FaceCursor()
+    {
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0; // Ensure Z-axis is consistent for 2D
+
+        Vector3 direction = mouseWorldPosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 
 
@@ -140,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = speed;
     }
 
-    public void resetMoveSpeed()
+    public void ResetMoveSpeed()
     {
         moveSpeed = defaultMoveSpeed;
     }
